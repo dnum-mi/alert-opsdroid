@@ -5,6 +5,9 @@
 {%- elif labels.severity == 'info' -%}
 {% set icon = '&#8505;' %}
 {%- endif -%}
+{%- if status == 'resolved' -%}
+{% set icon ='&#9989;' -%}
+{%- endif -%}
 {{ icon }} <b>{{ labels.alertname }} - {{ status | title }}*</b> {{ icon }}
 Origine: _{{ origin }}_
 <code>
